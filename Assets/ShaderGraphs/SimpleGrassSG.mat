@@ -86,6 +86,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 1
     - _AlphaToMask: 0
+    - _Amplitude: 0.88
     - _Blend: 1
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -99,13 +100,14 @@ Material:
     - _DstBlend: 10
     - _DstBlendAlpha: 10
     - _EnvironmentReflections: 1
-    - _Frequency: 0.74
+    - _Frequency: 1.85
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Intensity: 14.01
+    - _Intensity: 0.74
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _Oscillation: 1.1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -113,6 +115,7 @@ Material:
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 1.59
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 1

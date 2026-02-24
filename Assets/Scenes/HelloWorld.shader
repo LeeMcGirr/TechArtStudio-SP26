@@ -146,6 +146,10 @@ Shader"Custom/HelloWorldShader"
 			ENDHLSL
 			//-----------------------------------------------END OF SHADOW CASTER PASS ------------------------------------------------------------
 
+
+			// ---------------------- screen space AO pass 
+			Pass{
+				}
 		}
 
 	}
