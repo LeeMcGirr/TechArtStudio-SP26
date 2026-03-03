@@ -148,8 +148,6 @@ Shader"Custom/HelloWorldShader"
 
 
 			// ---------------------- screen space AO pass 
-			Pass{
-				}
 		}
 
 	}
