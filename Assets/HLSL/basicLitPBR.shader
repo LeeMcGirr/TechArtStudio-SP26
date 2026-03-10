@@ -159,7 +159,7 @@ Shader "Custom/basicLitPBR"
         }
 
         // --------------------------------------- SHADOW CASTER PASS PULLED FROM ShadowCasterPass.hlsl IN LIBRARY ---------------
-        // -------------------------------- MUST BE REDEFINED HERE TO USE ScreenDoor CBUFFER and stay batchable --------------------
+        // -------------------------------- MUST BE REDEFINED HERE TO USE basicLitPBR CBUFFER and stay batchable --------------------
         Pass
         {
             Name "ShadowCaster"

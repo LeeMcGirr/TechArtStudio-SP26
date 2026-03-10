@@ -5,7 +5,9 @@ Shader "Custom/simpleRaymarch"
         [Color] _Color("Base Color", Color) = (1, 1, 1, 1)
         _Radius("Radius", Range(0,10)) = .5
         _Steps("Steps", Range(1,128)) = 64
-		_StepSize("Step Size", Range(0.01,0.5)) = 0.05
+		_StepSize("Step Size", Range(0.01,2)) = 0.05
+        _Center("center", Vector) = (0,0,0)
+        _Points("additional", Vector) = (0,0,0)
     }
 
     SubShader
@@ -27,6 +29,7 @@ Shader "Custom/simpleRaymarch"
                 float _Radius;
                 float _Steps;
                 float _StepSize;
+                float3 _Points;
             CBUFFER_END
 
         ENDHLSL
@@ -56,16 +59,16 @@ Shader "Custom/simpleRaymarch"
             static float RemapFloat(float value, float from1, float to1, float from2, float to2)
             {   return (value - from1) / (to1 - from1) * (to2 - from2) + from2; };
 
-            bool sphereHit (float3 p)
+            bool sphereHit (float3 p, float3 centerP)
             {
-                return distance(p,_Center) < _Radius;
+                return distance(p,centerP) < _Radius;
             }
 
-            bool raymarchHit (float3 position, float3 direction)
+            bool raymarchHit (float3 position, float3 direction, float3 centerP)
             {
                 for (int i = 0; i<_Steps; i++)
                 {
-                    if ( sphereHit(position) )
+                    if ( sphereHit(position, centerP) )
                         return true;
 
                     position += direction * _StepSize;
@@ -96,7 +99,7 @@ Shader "Custom/simpleRaymarch"
                 UNITY_SETUP_INSTANCE_ID(IN);
 
                 //center of object
-                _Center = IN.cPos;
+                //_Center = IN.cPos;
                 //worldspace position
                 float3 worldPos = IN.positionWS;
                 // view direction
@@ -105,8 +108,10 @@ Shader "Custom/simpleRaymarch"
                 //sample the color and check against raymarchHit
                 half4 color = _Color;
                 //IF raymarchHits then render color, otherwise render white
-                color = (raymarchHit(worldPos,viewDir)) ? color : half4(1,1,1,0);
-                clip(color.w - 0.01);
+                color = (raymarchHit(worldPos,viewDir,_Center)) ? color : half4(1,1,1,0);
+                color *= (raymarchHit(worldPos,viewDir,_Points)) ? color : half4(1,1,1,0); 
+
+                //clip(color.w-0.01);
 
                 return color;
             }
