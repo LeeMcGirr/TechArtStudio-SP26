@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1785204118419231164
+--- !u!114 &-5983850033070921733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.FullScreenPassRendererFeature
   m_Active: 1
   injectionPoint: 600
-  fetchColorBuffer: 0
+  fetchColorBuffer: 1
   requirements: 0
   passMaterial: {fileID: 2100000, guid: 51284cc5b96b9e941b7801513c6c50ea, type: 2}
   passIndex: 0
@@ -46,8 +46,8 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 7200000, guid: b9a23f869c4fd45f19c5ada54dd82176, type: 3}
   m_RendererFeatures:
   - {fileID: 7833122117494664109}
-  - {fileID: -1785204118419231164}
-  m_RendererFeatureMap: ad6b866f10d7b46c44ae0e0e50ae39e7
+  - {fileID: -5983850033070921733}
+  m_RendererFeatureMap: ad6b866f10d7b46cfb2799451918f5ac
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
