@@ -20,6 +20,21 @@ MonoBehaviour:
   passIndex: 0
   bindDepthStencilAttachment: 0
   m_Version: 1
+--- !u!114 &-289099991801813093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b89c4d71193d4b40b9b1532d7cc40ee, type: 3}
+  m_Name: BlitAndSwapColorRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::BlitAndSwapColorRendererFeature
+  m_Active: 0
+  material: {fileID: 2100000, guid: 9bee3656c8d47d740ac4e0ce368acd06, type: 2}
+  renderPassEvent: 500
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,7 +62,8 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: 7833122117494664109}
   - {fileID: -5983850033070921733}
-  m_RendererFeatureMap: ad6b866f10d7b46cfb2799451918f5ac
+  - {fileID: -289099991801813093}
+  m_RendererFeatureMap: ad6b866f10d7b46cfb2799451918f5ac9ba715d416e9fcfb
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
