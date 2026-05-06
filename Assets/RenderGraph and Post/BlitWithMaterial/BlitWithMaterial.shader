@@ -1,4 +1,4 @@
-Shader "BlitWithMaterial"
+Shader "Custom/BlitWithMaterial"
 {
    SubShader
    {
